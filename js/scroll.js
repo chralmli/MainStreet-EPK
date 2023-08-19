@@ -8,9 +8,9 @@ window.addEventListener('scroll', function() {
             link.style.color = "white";
         });
     } else {
-        topSection.style.background = "rgba(0, 0, 0, 0.5)";
+        topSection.style.background = "transparent";
         document.querySelectorAll("nav li a").forEach(link => {
-            link.style.color = "#eee"
+            link.style.color = "rgba(0, 0, 0, 0.85)"
         });
     }
 });
