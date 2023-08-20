@@ -2,16 +2,24 @@
 window.addEventListener('scroll', function() {
     const header = document.querySelector("header");
     const topSection = document.querySelector(".top-section");
+    const menuToggle = document.querySelector(".menu-toggle");
     if (window.scrollY > 130) {
+        menuToggle.style.color = "white";
         header.style.backgroundColor = "#333";
         this.document.querySelectorAll("nav li a").forEach(link => {
             link.style.color = "white";
         });
     } else {
+        menuToggle.style.color = "rgba(0, 0, 0, 0.85)";
         topSection.style.background = "transparent";
         document.querySelectorAll("nav li a").forEach(link => {
             link.style.color = "rgba(0, 0, 0, 0.85)"
         });
+    } if (this.window.innerWidth < 768) {
+        header.style.height = "30px";
+        this.document.querySelectorAll("nav li a").forEach(link => {
+            link.style.color = "white";
+        })
     }
 });
 
