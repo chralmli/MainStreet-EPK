@@ -38,8 +38,24 @@
 
 
     <div class="content">
-        <div class="banner-container">
+        <div class="slider-flex-container">
+            <div class="slider">
+                <!-- Navigation Buttons -->
+                <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                <div class="slides">
+                    <div class="slide"><img src="/photos/nowigwamlogo-banner.jpg" alt=""></div>
+                    <div class="slide"><img src="/photos/ByscenenWigWam.jpg" alt=""></div>
+                    <div class="slide"><img src="/photos/Cover3.jpeg" alt=""></div>
+                    <div class="slide"><img src="/photos/Cover3.jpeg" alt=""></div>
+                </div>
+                <!-- Pagination dots -->
+                <div class="pagination"></div>
+            </div>
         </div>
+        
+        <!-- <div class="banner-container">
+        </div> -->
         <section id="about">
             <h2>Om Oss</h2>
             <p class="text-shadow">Main Street Revival er en rock-trio fra Trøndelag, kjent for sine råe, tighte liveopptredener. 
@@ -147,5 +163,6 @@
     <script src="/js/menuToggle.js"></script>
     <script src="/js/scroll.js"></script>
     <script src="/js/modal.js"></script>
+    <script src="/js/slider.js"></script>
 </body>
 </html>
