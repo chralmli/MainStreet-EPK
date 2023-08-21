@@ -15,6 +15,64 @@ body {
     font-family: "Droid Serif", sans-serif;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+.album-promo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    border-radius: 12px;
+    max-width: 1600px;
+    margin: 0 auto;
+    height: 80vh;
+}
+
+.album-image img {
+    max-width: 800px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.album-text {
+    padding-left: 100px;
+    flex-grow: 1;
+}
+
+.album-text h1 {
+    font-size: calc(32px + 1vw);
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.album-text p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.listen-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+.listen-button:hover {
+    background-color: #d5ab00;
+}
+
+
 /* .slider-flex-container {
     display: flex;
     justify-content: center;
@@ -23,9 +81,10 @@ body {
 
 .slider {
     width: 100%;
-    max-height: 800px;
     overflow: hidden;
     position: relative;
+    margin-top: 10px;
+    padding: 20px;
 }
 
 .slides {
@@ -44,17 +103,11 @@ body {
 
 .slide img {
     height: auto;
-    max-height: 800px;
-    max-width: 100%;
+    max-width: 800px;
     object-fit: cover;
     object-position: center;
-}
-
-@media (max-width: 768px) {
-    .slide img {
-        max-width: 100%;
-        object-fit: contain;
-    }
+    border-radius: 12px;
+    box-shadow: 3px 4px 20px 2px rgba(0, 0, 0, 0.183);
 }
 
 /* Pagination */
@@ -81,15 +134,11 @@ body {
 }
 
 .dot.active {
-    background-color: #717171;
+    background-color: #d5ab00;
 }
 
 p {
-    font-size: 18px;
-}
-
-.content {
-    margin-top: 100px;
+    font-size: calc(16px + 0.3vw);
 }
 
 #navbar-placeholder {
@@ -110,7 +159,7 @@ header {
 #logo img {
     height: 130px;
     margin: 0 auto;
-    margin-top: 10px;
+    padding-top: 10px;
 }
 
 h2 {
@@ -148,6 +197,7 @@ nav ul li a {
     font-family: 'Raleway', sans-serif;
     padding: 10px;
     transition: color 0.3s;
+    font-size: 20px;
 }
 
 nav li a:hover, .menu-toggle:hover {
@@ -156,18 +206,6 @@ nav li a:hover, .menu-toggle:hover {
 
 .menu-toggle {
     display: none;
-}
-
-.banner-container {
-    background-image: url(/photos/nowigwamlogo-banner.jpg);
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-position-y: -600px;
-    background-size: cover;
-    height: 60vh;
-    margin: 0 auto;
-    margin-top: -100px;
-    box-shadow: 0px 4px 20px rgba(167, 147, 130, 0.25);
 }
 
 img {
@@ -204,20 +242,6 @@ img {
 
 .social-icons-lg a:hover {
     color: #d6b120;
-}
-
-@media (max-width: 768px) {
-    .social-icons-lg {
-        display: none;
-    }
-    .social-icons-sm {
-        position: relative;
-        flex-direction: row;
-        gap: 1em;
-        justify-content: center;
-        align-items: flex-end;
-        display: flex;
-    }
 }
 
 section {
@@ -336,8 +360,25 @@ footer {
     margin-top: 20px;
 }
 
-#email {
+#copy {
+    font-size: 14px;
+}
+
+.contact-us-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
     font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+}
+
+.contact-us-button:hover {
+    background-color: #d6b120;
 }
 
 .modal {
@@ -387,8 +428,60 @@ footer {
     cursor: pointer;
 }
 
-/* Mobile view */
+/* Responsiveness for screens less than 1400 px */
+@media only screen and (max-width: 1399px) {
+    .album-image img {
+        max-width: 600px;
+    }
+}
+
+/* Responsiveness for screens less than 1024 px */
+@media only screen and (max-width: 1024px) {
+    .album-promo {
+        flex-direction: column;
+        padding: 30px;
+        height: auto;
+        text-align: center;
+    }
+
+    .album-image img {
+        max-width: 100%;
+    }
+
+    .album-text {
+        padding-left: 0;
+    }
+
+    .social-icons-lg {
+        display: none;
+    }
+    .social-icons-sm {
+        position: relative;
+        flex-direction: row;
+        gap: 1em;
+        justify-content: center;
+        align-items: flex-end;
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .social-icons-sm a {
+        margin-bottom: 0;
+    }
+}
+
+/* Responsiveness for screens less than 768 px */
 @media (max-width: 768px) {
+
+    .slide img {
+        max-width: 100%;
+        object-fit: contain;
+    }
+
+    .slider {
+        padding: 0;
+    }
+
     .content {
         margin-top: 40px;
     }
@@ -483,6 +576,4 @@ footer {
     td:nth-of-type(4):before {
         content: "Tickets";
     }
-
-
 }

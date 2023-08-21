@@ -32,5 +32,15 @@ function startSliderInterval() {
     }, 5000);
 }
 
+// Adding event listener to pause slider on hover
+slideContainer.addEventListener("mouseenter", function() {
+    clearInterval(sliderInterval);
+});
+
+// Adding event listener to restart slider when hover ends
+slideContainer.addEventListener("mouseleave", function() {
+    startSliderInterval();
+});
+
 updateSlider();
 startSliderInterval();

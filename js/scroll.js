@@ -3,7 +3,7 @@ window.addEventListener('scroll', function() {
     const header = document.querySelector("header");
     const topSection = document.querySelector(".top-section");
     const menuToggle = document.querySelector(".menu-toggle");
-    if (window.scrollY > 130) {
+    if (window.scrollY > 40) {
         menuToggle.style.color = "white";
         header.style.backgroundColor = "#333";
         this.document.querySelectorAll("nav li a").forEach(link => {
@@ -29,7 +29,7 @@ window.addEventListener("scroll", function() {
     const header = document.querySelector("header");
     const placeholder = document.getElementById("navbar-placeholder");
 
-    if (window.scrollY >= logoHeight) {
+    if (window.scrollY >= 80) {
         header.style.position = "fixed";
         header.style.top = "0";
         placeholder.style.height = `${header.offsetHeight}px`;
