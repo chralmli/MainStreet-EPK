@@ -84,7 +84,6 @@ body {
     overflow: hidden;
     position: relative;
     margin-top: 10px;
-    padding: 20px;
 }
 
 .slides {
@@ -524,7 +523,7 @@ footer {
         display: block;
         cursor: pointer;
         position: fixed;
-        top: 17.5px;
+        top: 5px;
         right: 20px;
         z-index: 999999;
     }

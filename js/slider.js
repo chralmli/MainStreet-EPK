@@ -1,4 +1,5 @@
 let slideIndex = 0;
+let slideImages = document.querySelectorAll(".slider img");
 const slides = document.querySelectorAll(".slide");
 const slideContainer = document.querySelector(".slides");
 const dotsContainer = document.querySelector(".pagination");
@@ -33,14 +34,16 @@ function startSliderInterval() {
 }
 
 // Adding event listener to pause slider on hover
-slideContainer.addEventListener("mouseenter", function() {
-    clearInterval(sliderInterval);
+    slideImages.forEach(slide => {
+        slide.addEventListener("mouseenter", function() {
+            clearInterval(sliderInterval);
+    });
+    slide.addEventListener("mouseleave", function() {
+        startSliderInterval();
+    });
 });
 
-// Adding event listener to restart slider when hover ends
-slideContainer.addEventListener("mouseleave", function() {
-    startSliderInterval();
-});
+
 
 updateSlider();
 startSliderInterval();
