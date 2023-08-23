@@ -26,3 +26,20 @@ function setupFadeInAnimations() {
         fadeInObserver.observe(section);
     });
 }
+
+// Add function to make it possible to translate the bio
+document.getElementById("toggle-translate").addEventListener("click", function() {
+    const norwegianBio = document.getElementById("norwegian-bio");
+    const englishBio = document.getElementById("english-bio");
+    const translateText = document.querySelector(".translate-text");
+
+    if (norwegianBio.style.display === "none") {
+        norwegianBio.style.display = "block";
+        englishBio.style.display = "none";
+        translateText.innerHTML = "Translate to English";
+    } else {
+        norwegianBio.style.display = "none";
+        englishBio.style.display = "block";
+        translateText.innerHTML = "Oversett til norsk";
+    }
+});
