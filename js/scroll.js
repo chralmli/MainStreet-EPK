@@ -15,13 +15,29 @@ window.addEventListener('scroll', function() {
         document.querySelectorAll("nav li a").forEach(link => {
             link.style.color = "rgba(0, 0, 0, 0.85)"
         });
-    } if (this.window.innerWidth < 768) {
-        header.style.height = "30px";
-        this.document.querySelectorAll("nav li a").forEach(link => {
-            link.style.color = "white";
-        })
     }
 });
+
+function updateHeaderSize() {
+    const header = document.querySelector("header");
+    if (window.innerWidth < 768) {
+        header.style.height = "30px";
+    } else {
+        header.style.height = "";
+    }
+}
+
+updateHeaderSize();
+window.addEventListener('resize', updateHeaderSize);
+//     } if (this.window.innerWidth < 768) {
+//         header.style.height = "30px";
+//         this.document.querySelectorAll("nav li a").forEach(link => {
+//             link.style.color = "white";
+//         })
+//     } else {
+//         header.style.height = "";
+//     }
+// });
 
 // solution for centered logo and nav
 window.addEventListener("scroll", function() {
